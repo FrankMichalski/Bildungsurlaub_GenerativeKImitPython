@@ -1,7 +1,6 @@
 #%% pakete
 import os
-import truststore
-truststore.inject_into_ssl()
+
 from langchain_openai import ChatOpenAI
 from langchain.agents import create_agent
 from langchain_tavily import TavilySearch

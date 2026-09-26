@@ -8,8 +8,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 #%% Bert's Norton360 Problem
-import truststore
-truststore.inject_into_ssl()
+# import truststore
+# truststore.inject_into_ssl()
 # %% Model and Embeddings Setup
 model = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 embeddings = OpenAIEmbeddings()
@@ -67,8 +67,8 @@ def my_prompt_router(input: str):
     
 
 #%% Testing the Router
-query = "What is the square root of 16?"
-# query = "What happened during the french revolution?"
+# query = "What is the square root of 16?"
+query = "What happened during the french revolution?"
 # query = "Who composed the moonlight sonata?"
 
 chain = my_prompt_router(query)

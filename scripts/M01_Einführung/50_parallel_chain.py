@@ -8,8 +8,8 @@ from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
 #%% Bert's Norton360 Problem
-import truststore
-truststore.inject_into_ssl()
+# import truststore
+# truststore.inject_into_ssl()
 
 #%% Model Instance
 model = ChatOpenRouter(model="google/gemini-3.5-flash-lite", temperature=0)

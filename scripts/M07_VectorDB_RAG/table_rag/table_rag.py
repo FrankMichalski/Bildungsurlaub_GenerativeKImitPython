@@ -1,7 +1,7 @@
 
 #%%
 import sqlite3
-from langchain_groq import ChatGroq
+from langchain_openrouter import ChatOpenRouter
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from pydantic import BaseModel, Field
@@ -32,7 +32,7 @@ user_query = "SELECT name FROM sqlite_master WHERE type='table';"  # lists all t
 fetch_information_from_db(user_query)
 #%%
 def create_sql_query(user_query: str, sql_table_info: str):
-    model = ChatGroq(model_name="llama-3.3-70b-versatile", temperature=0)
+    model = ChatOpenRouter(model="deepseek/deepseek-v4.1-flash:nitro", temperature=0)
     prompt = ChatPromptTemplate.from_messages(
         [
             ("system", "You are a SQL expert and can create a SQL query to answer the user's question. You will be given a SQL table information and a user question. You will need to create a SQL query to answer the user question. You will return a JSON with an object sql_query"),
@@ -74,7 +74,7 @@ def rag(user_query: str, sql_table_info: str):
     retrieved_information = fetch_information_from_db(query=sql_query['sql_query'])
     print(f"Retrieved Info: {retrieved_information}")
     # 2. Augmentation
-    llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
+    llm = ChatOpenRouter(model="z-ai/glm-5.3-flash", temperature=0)
     # prepare chain
     messages = [
         ("system", """

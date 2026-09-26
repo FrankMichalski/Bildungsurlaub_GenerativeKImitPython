@@ -44,4 +44,6 @@ dependencies = [
     "pyperclip>=1.11.0",
     "docx2txt>=0.9",
     "docling>=2.102.1",
+    "typesafe-sdk>=0.7.1",
+    "tabulate>=0.10.0",
 ]
