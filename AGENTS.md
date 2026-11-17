@@ -34,7 +34,7 @@ python scripts/M01_Einführung/70_structured_output.py
 
 - **Kein Testing, kein Linting, kein CI** — Kurs-Repo, keine Tests vorhanden.
 - **Keine Cross-Importe** zwischen Skripten — jedes File ist standalone.
-- **`langchain_core.pydantic_v1`** wird verwendet (LangChain-Compat-Schicht), nicht `pydantic` direkt.
+- **`pydantic`** wird direkt verwendet (`from pydantic import BaseModel, Field`). `langchain_core.pydantic_v1` existiert in der installierten `langchain-core`-Version (1.5.2) nicht mehr.
 - **`unsere_skripte/`** ist im `.gitignore` — persönliche Übungen, nicht Teil des Repos.
 - **Slides** liegen als PDFs unter `slides/` (und teilweise `slides/Mxx_*/`).
 - **`ai_docs/`** enthält Task-Templates und Feature-Beschreibungen für KI-Aufgaben.
